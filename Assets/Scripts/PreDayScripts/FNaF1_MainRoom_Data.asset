@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87dd25f4b5c2ae4abe5ad20541139fc, type: 3}
+  m_Name: FNaF1_MainRoom_Data
+  m_EditorClassIdentifier: Assembly-CSharp::RoomInfo
+  DisplayName: FNaF 1 MAIN ROOM
+  RoomPrefab: {fileID: 2428782051096606856, guid: cffd7632f98b9084e8995c0f50e2ce4e, type: 3}
+  StartingQuantity: 1
