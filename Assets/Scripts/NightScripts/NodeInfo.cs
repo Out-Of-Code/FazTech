@@ -24,7 +24,7 @@ public class NodeInfo : MonoBehaviour
 {
     public NodePrefab[] NodePrefabs;
     public ConnectedNode[] ConnectedNodes;
-    public Animatronic OccupyingAnimatronic;
+    public AnimatronicAPI OccupyingAnimatronic;
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

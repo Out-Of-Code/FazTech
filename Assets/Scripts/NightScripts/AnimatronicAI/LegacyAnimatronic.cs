@@ -5,7 +5,7 @@ using NaughtyAttributes;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Animatronic : MonoBehaviour
+public class LegacyAnimatronic : MonoBehaviour
 {
     [Header("AI Settings")]
     [Range(0, 20)]
@@ -74,7 +74,7 @@ public class Animatronic : MonoBehaviour
         if (AIType == AnimatronicAiType.Bonnie || AIType == AnimatronicAiType.Freddy || AIType == AnimatronicAiType.Chica)
         {
             CurrentNode = StartingNode;
-            CurrentNode.OccupyingAnimatronic = this;
+            //CurrentNode.OccupyingAnimatronic = this;
             MoveToNode(CurrentNode);
             MoveTimer = MoveInterval;
         }
@@ -244,7 +244,7 @@ public class Animatronic : MonoBehaviour
             PreviousNode = null;
             CurrentNode.OccupyingAnimatronic = null;
             CurrentNode = StageNode;
-            StageNode.OccupyingAnimatronic = this;
+            //StageNode.OccupyingAnimatronic = this;
             MoveToNode(CurrentNode);
             return;
         }
@@ -269,7 +269,7 @@ public class Animatronic : MonoBehaviour
         PreviousNode.OccupyingAnimatronic = null;
 
         CurrentNode = NextNode;
-        CurrentNode.OccupyingAnimatronic = this;
+        //CurrentNode.OccupyingAnimatronic = this;
 
         MoveToNode(CurrentNode);
 
