@@ -205,13 +205,13 @@ public class LegacyAnimatronic : MonoBehaviour
             if (Connection.Node == null)
                 continue;
 
-            if (Connection.AI_Type_Allowed == null ||
-                !System.Array.Exists(
-                    Connection.AI_Type_Allowed,
-                    type => type == AIType))
-            {
-                continue;
-            }
+            //if (Connection.AI_Type_Allowed == null ||
+            //    !System.Array.Exists(
+            //        Connection.AI_Type_Allowed,
+           //         type => type == AIType))
+            //{
+           //     continue;
+            //}
 
             NodeInfo Destination =
                 Connection.Node.GetComponent<NodeInfo>();
@@ -299,15 +299,15 @@ public class LegacyAnimatronic : MonoBehaviour
     {
         foreach (ConnectedNode Connection in CurrentNode.ConnectedNodes)
         {
-            if (Connection.Node != null &&
-                Connection.Node.name == NodeName &&
-                Connection.AI_Type_Allowed != null &&
-                System.Array.Exists(
-                    Connection.AI_Type_Allowed,
-                    type => type == AIType))
-            {
-                return true;
-            }
+            //if (Connection.Node != null &&
+            //    Connection.Node.name == NodeName &&
+            //    Connection.AI_Type_Allowed != null &&
+             //   System.Array.Exists(
+             //       Connection.AI_Type_Allowed,
+            //        type => type == AIType))
+           // {
+          //      return true;
+          //  }
         }
 
         return false;

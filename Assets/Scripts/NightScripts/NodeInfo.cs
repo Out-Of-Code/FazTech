@@ -17,7 +17,7 @@ public class NodePrefab
 public class ConnectedNode
 {
     public GameObject Node;
-    public AnimatronicAiType[] AI_Type_Allowed;
+    public ConnectionType Connection;
 }
 
 public class NodeInfo : MonoBehaviour
@@ -45,8 +45,7 @@ public class NodeInfo : MonoBehaviour
                 continue;
 
             // Color the path according to the allowed AI type.
-            if (connection.AI_Type_Allowed == null ||
-                connection.AI_Type_Allowed.Length == 0)
+            if (connection.Connection == null)
             {
                 Gizmos.color = Color.gray;
             }
@@ -60,66 +59,54 @@ public class NodeInfo : MonoBehaviour
                 if (side.sqrMagnitude < 0.001f)
                     side = Vector3.Cross(direction, Vector3.right).normalized;
 
-                var allowedTypes = connection.AI_Type_Allowed;
+                var allowedTypes = connection.Connection;
 
                 // Draw gray if no animatronic types are assigned.
-                if (allowedTypes == null || allowedTypes.Length == 0)
+                if (allowedTypes == null)
                 {
                     Gizmos.color = Color.gray;
                     Gizmos.DrawLine(start, end);
                 }
                 else
                 {
-                    // Draw one slightly offset line for each allowed type.
-                    for (int i = 0; i < allowedTypes.Length; i++)
+                    switch (allowedTypes)
                     {
-                        switch (allowedTypes[i])
-                        {
-                            case AnimatronicAiType.Freddy:
-                                Gizmos.color = new Color(0.6f, 0.3f, 0.1f);
-                                break;
-
-                            case AnimatronicAiType.Chica:
-                                Gizmos.color = Color.yellow;
-                                break;
-
-                            case AnimatronicAiType.Bonnie:
-                                Gizmos.color = Color.blue;
-                                break;
-
-                            case AnimatronicAiType.Foxy:
-                                Gizmos.color = Color.red;
-                                break;
-
-                            default:
-                                Gizmos.color = Color.gray;
-                                break;
-                        }
-
-                        // Center the lines around the original connection.
-                        float offset = (i - (allowedTypes.Length - 1) / 2f) * 0.08f;
-                        Vector3 offsetVector = side * offset;
-
-                        Vector3 lineStart = start + offsetVector;
-                        Vector3 lineEnd = end + offsetVector;
-
-                        Gizmos.DrawLine(lineStart, lineEnd);
-
-                        // Draw an arrowhead for this animatronic's path.
-                        Vector3 arrowPosition = Vector3.Lerp(lineStart, lineEnd, 0.8f);
-
-                        Gizmos.DrawLine(
-                            arrowPosition,
-                            arrowPosition - direction * 0.25f + side * 0.12f
-                        );
-                        Gizmos.DrawLine(
-                            arrowPosition,
-                            arrowPosition - direction * 0.25f - side * 0.12f
-                        );
+                        case ConnectionType.Duct:
+                            Gizmos.color = Color.grey;
+                            break;
+                        case ConnectionType.Hallway:
+                            Gizmos.color = Color.blue;
+                            break;
+                        case ConnectionType.Vent:
+                            Gizmos.color = Color.green;
+                            break;
+                        default:
+                            Gizmos.color = Color.gray;
+                            break;
                     }
+
+                    // Center the lines around the original connection.
+                    Vector3 offsetVector = side * 0.08f;
+
+                    Vector3 lineStart = start + offsetVector;
+                    Vector3 lineEnd = end + offsetVector;
+
+                    Gizmos.DrawLine(lineStart, lineEnd);
+
+                    // Draw an arrowhead for this animatronic's path.
+                    Vector3 arrowPosition = Vector3.Lerp(lineStart, lineEnd, 0.8f);
+
+                    Gizmos.DrawLine(
+                        arrowPosition,
+                        arrowPosition - direction * 0.25f + side * 0.12f
+                    );
+                    Gizmos.DrawLine(
+                        arrowPosition,
+                        arrowPosition - direction * 0.25f - side * 0.12f
+                    );
                 }
             }
         }
-#endif
     }
+#endif
 }

@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a22aec35d4e2746a8d926f712171bc, type: 3}
+  m_Name: Freddy
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatronicPersonality
+  GeneralInfo:
+    MoveInterval: 5
+    DisplayName: Freddy
+    ShopDescription: You know Freddy
+    Lethal: 1
+  AllowConnection:
+    Allowed: 1
+    Connection: 00000000
+  AllowBacktrack:
+    Allowed: 0
+  AllowEnteringOccupiedRooms:
+    Allowed: 1
+  AllowCenterNavigate:
+    Allowed: 1
+  AllowCamMove:
+    Allowed: 0
+  AllowWander:
+    Allowed: 0
+  AllowAwayMovement:
+    Allowed: 0
+  AllowIndirectMovement:
+    Allowed: 0
+  AllowSameRoomMovement:
+    Allowed: 1
+  AllowOfficeEntry:
+    Allowed: 1
+  AllowOfficeKill:
+    Allowed: 1
+  AllowDoorBlock:
+    Allowed: 1
+  AllowOfficeAttack:
+    Allowed: 1
+  AllowProceduralAnimatedMoving:
+    Allowed: 0
+  AllowMovementWhileMoving:
+    Allowed: 0
+  AllowLightDetection:
+    Allowed: 0
+  AllowCameraDetection:
+    Allowed: 0
+  AllowAudioDetection:
+    Allowed: 0
+  AllowPlayerDetection:
+    Allowed: 0
+  AllowPlayerActionInterruption:
+    Allowed: 0
+  AllowRemoteAttack:
+    Allowed: 0
+  AllowInstantKill:
+    Allowed: 1
+  AllowAttackInterruption:
+    Allowed: 0
+  AllowAttackCooldown:
+    Allowed: 0
+  AllowMultipleAttacks:
+    Allowed: 0
+  AllowAttackRetreat:
+    Allowed: 1
+  AllowPlayerEscape:
+    Allowed: 0
+  AllowAwarenessChange:
+    Allowed: 0
+  AllowAggressionChange:
+    Allowed: 0
+  AllowBehaviorEscalation:
+    Allowed: 0
+  AllowBehaviorDeescalation:
+    Allowed: 0
+  AllowPlayerHabitDetection:
+    Allowed: 0
+  PreferDirection:
+  - Direction: 1
+    PreferWeight: 10
+  PreferFollowing: []
+  PreferConnection: []
+  Intelligence:
+    KnowMap: 1
+    KnowAnimatronics: 1
+    KnowOffice: 1
+    KnowUpgrades: 1
+    ForgetAfterNight: 0
+    AntNavigation: 0

@@ -10,199 +10,162 @@ public enum Direction
     Back,
     Other
 }
-
 [Serializable]
-public class AllowConnection // allows/disallows going through certain types of connection
-{
-    public ConnectionType Connection;
-    public bool Allowed = true;
-}
-
-[Serializable]
-public class AllowBacktrack // allows/disallows going to the immediate previous node
-{
-    public bool Allowed = false;
-}
-
-[Serializable]
-public class AllowEnteringOccupiedRooms // allows/disallows going into rooms where one or more node has an animatronic in it
-{
-    public bool Allowed = true;
-}
-
-[Serializable]
-public class AllowCenterNavigate // allows/disallows the AI to try to navigate to the center of the map rather than the edges or certain sides
-{
-    public bool Allowed = true;
-}
-
-[Serializable]
-public class AllowCamMove // allows/disallows moving while cams are on them
-{
-    public bool Allowed = false;
-}
-
-[Serializable]
-public class AllowWander // false = they take the shortest possible path directly to your office, true = they can wander (bonnie/chica vs freddy in FNaF 1)
-{
-    public bool Allowed = true;
-}
-
-[Serializable]
-public class AllowAwayMovement // allows/disallows moving away from the office if there are other options
-{
-    public bool Allowed = true;
-}
-
-[Serializable]
-public class AllowIndirectMovement // allows/disallows moving to not directly connected rooms
-{
-    public bool Allowed = false;
-}
-
-[Serializable]
-public class AllowOfficeEntry // allows/disallows moving into the office
+public class RuleDefinition
 {
     public bool Allowed = true;
 }
 [Serializable]
-public class AllowSameRoomMovement // allows/disallows moving between nodes in the same room
+public class AllowConnection : RuleDefinition // allows/disallows going through certain types of connection
 {
-    public bool Allowed = false;
+    public List<ConnectionType> Connection;
 }
 
 [Serializable]
-public class AllowOfficeKill // allows/disallows them to kill you when they enter the office
+public class AllowBacktrack : RuleDefinition // allows/disallows going to the immediate previous node
 {
-    public bool Allowed = true;
+    public AllowBacktrack()
+    {
+        Allowed = false;
+    }
 }
 
 [Serializable]
-public class AllowDoorBlock // if a door stops them, true = it does, false = it dont
+public class AllowEnteringOccupiedRooms : RuleDefinition // allows/disallows going into rooms where one or more node has an animatronic in it
+{}
+
+[Serializable]
+public class AllowCenterNavigate : RuleDefinition // allows/disallows the AI to try to navigate to the center of the map rather than the edges or certain sides
+{}
+
+[Serializable]
+public class AllowCamMove : RuleDefinition // allows/disallows moving while cams are on them
 {
-    public bool Allowed = true;
+    public AllowCamMove()
+    {
+        Allowed = false;
+    }
 }
 
 [Serializable]
-public class AllowProceduralAnimatedMoving // actual moving (a NavMesh finding a path to the node as best as it can, animating it via procedural/kinematic animation) vs snapping
+public class AllowWander : RuleDefinition // false = they take the shortest possible path directly to your office, true = they can wander (bonnie/chica vs freddy in FNaF 1)
+{}
+
+[Serializable]
+public class AllowAwayMovement : RuleDefinition // allows/disallows moving away from the office if there are other options
+{}
+
+[Serializable]
+public class AllowIndirectMovement : RuleDefinition // allows/disallows moving to not directly connected rooms
 {
-    public bool Allowed = false;
+    public AllowIndirectMovement()
+    {
+        Allowed = false;
+    }
 }
 
 [Serializable]
-public class AllowMovementWhileMoving // if they can get another target to go towards while moving (if they use procedural movement)
+public class AllowOfficeEntry : RuleDefinition // allows/disallows moving into the office
+{}
+
+[Serializable]
+public class AllowSameRoomMovement : RuleDefinition // allows/disallows moving between nodes in the same room
 {
-    public bool Allowed = true;
+    
 }
 
 [Serializable]
-public class AllowLightDetection // allows/disallows detecting the player through lights
+public class AllowOfficeKill : RuleDefinition // allows/disallows them to kill you when they enter the office
 {
-    public bool Allowed = true;
+    
 }
 
 [Serializable]
-public class AllowCameraDetection // allows/disallows detecting camera activity
+public class AllowDoorBlock : RuleDefinition // if a door stops them, true = it does, false = it dont
 {
-    public bool Allowed = true;
+    
 }
 
 [Serializable]
-public class AllowAudioDetection // allows/disallows detecting audio cues
-{
-    public bool Allowed = true;
-}
+public class AllowProceduralAnimatedMoving : RuleDefinition // actual moving (a NavMesh finding a path to the node as best as it can, animating it via procedural/kinematic animation) vs snapping
+{}
+
+[Serializable]
+public class AllowMovementWhileMoving : RuleDefinition // if they can get another target to go towards while moving (if they use procedural movement)
+{}
+
+[Serializable]
+public class AllowLightDetection : RuleDefinition // allows/disallows detecting the player through lights
+{}
+
+[Serializable]
+public class AllowCameraDetection : RuleDefinition // allows/disallows detecting camera activity
+{}
+
+[Serializable]
+public class AllowAudioDetection : RuleDefinition // allows/disallows detecting audio cues
+{}
 
 [Serializable]
 public class
-    AllowPlayerDetection // allows/disallows directly detecting the player's presence (gives verbose info about the player)
-{
-    public bool Allowed = true;
-}
+    AllowPlayerDetection : RuleDefinition // allows/disallows directly detecting the player's presence (gives verbose info about the player)
+{}
 
 [Serializable]
-public class AllowPlayerActionInterruption // allows/disallows player actions interrupting current behavior
-{
-    public bool Allowed = true;
-}
+public class AllowPlayerActionInterruption : RuleDefinition // allows/disallows player actions interrupting current behavior
+{}
 
 [Serializable]
-public class AllowOfficeAttack // allows/disallows initiating an attack from inside the office
-{
-    public bool Allowed = true;
-}
+public class AllowOfficeAttack : RuleDefinition // allows/disallows initiating an attack from inside the office
+{}
 
 [Serializable]
-public class AllowRemoteAttack // allows/disallows attacking without physically entering the office
-{
-    public bool Allowed = false;
-}
+public class AllowRemoteAttack : RuleDefinition // allows/disallows attacking without physically entering the office
+{}
 
 [Serializable]
-public class AllowInstantKill // allows/disallows killing the player immediately when attack conditions are met
-{
-    public bool Allowed = true;
-}
+public class AllowInstantKill : RuleDefinition // allows/disallows killing the player immediately when attack conditions are met
+{}
 
 [Serializable]
-public class AllowAttackInterruption // allows/disallows interrupting an attack once it begins
-{
-    public bool Allowed = true;
-}
+public class AllowAttackInterruption : RuleDefinition // allows/disallows interrupting an attack once it begins
+{}
 
 [Serializable]
-public class AllowAttackCooldown // allows/disallows having a cooldown between attacks
-{
-    public bool Allowed = true;
-}
+public class AllowAttackCooldown : RuleDefinition // allows/disallows having a cooldown between attacks
+{}
 
 [Serializable]
-public class AllowMultipleAttacks // allows/disallows attacking multiple times during one encounter
-{
-    public bool Allowed = true;
-}
+public class AllowMultipleAttacks : RuleDefinition // allows/disallows attacking multiple times during one encounter
+{}
 
 [Serializable]
-public class AllowAttackRetreat // allows/disallows retreating after reaching an attack position
-{
-    public bool Allowed = true;
-}
+public class AllowAttackRetreat : RuleDefinition // allows/disallows retreating after reaching an attack position
+{}
 
 [Serializable]
-public class AllowPlayerEscape // allows/disallows the player escaping after an encounter begins
-{
-    public bool Allowed = true;
-}
+public class AllowPlayerEscape : RuleDefinition // allows/disallows the player escaping after an encounter begins
+{}
 
 [Serializable]
-public class AllowAwarenessChange // allows/disallows awareness changing based on player behavior/time
-{
-    public bool Allowed = true;
-}
+public class AllowAwarenessChange : RuleDefinition // allows/disallows awareness changing based on player behavior/time
+{}
 
 [Serializable]
-public class AllowAggressionChange // allows/disallows aggression changing over time
-{
-    public bool Allowed = true;
-}
+public class AllowAggressionChange : RuleDefinition // allows/disallows aggression changing over time
+{}
 
 [Serializable]
-public class AllowBehaviorEscalation // allows/disallows entering more dangerous behavior states
-{
-    public bool Allowed = true;
-}
+public class AllowBehaviorEscalation : RuleDefinition // allows/disallows entering more dangerous behavior states
+{}
 
 [Serializable]
-public class AllowBehaviorDeescalation // allows/disallows returning to less dangerous behavior states
-{
-    public bool Allowed = true;
-}
+public class AllowBehaviorDeescalation : RuleDefinition // allows/disallows returning to less dangerous behavior states
+{}
 
 [Serializable]
-public class AllowPlayerHabitDetection // allows/disallows recognizing repeated player behavior
-{
-    public bool Allowed = true;
-}
+public class AllowPlayerHabitDetection : RuleDefinition // allows/disallows recognizing repeated player behavior
+{}
 
 [Serializable]
 public class PreferDirection // prefers attacking the office from a certain direction
@@ -214,7 +177,7 @@ public class PreferDirection // prefers attacking the office from a certain dire
 [Serializable]
 public class PreferFollowing // prefers following a certain Animatronic
 {
-    public Animatronic Follow;
+    public AnimatronicAPI Follow;
     public float PreferWeight = 1;
 }
 
