@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum AnimatronicAiType
@@ -23,7 +24,8 @@ public class ConnectedNode
 public class NodeInfo : MonoBehaviour
 {
     public NodePrefab[] NodePrefabs;
-    public ConnectedNode[] ConnectedNodes;
+    public List<ConnectedNode> ConnectedNodes = new List<ConnectedNode>();
+    public RoomNode[] ExitNode;
     public AnimatronicAPI OccupyingAnimatronic;
 
 #if UNITY_EDITOR
