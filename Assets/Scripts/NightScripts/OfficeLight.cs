@@ -7,7 +7,6 @@ public class OfficeLight : MonoBehaviour
     public UnityEvent OnLightSetOn;
     public UnityEvent OnLightSetOff;
     public bool CanUse = true;
-    public GameObject BlackBox;
 
     public bool IsOn { get; private set; }
 
@@ -17,7 +16,6 @@ public class OfficeLight : MonoBehaviour
         {
             IsOn = !IsOn;
             TargetLight.gameObject.SetActive(IsOn);
-            BlackBox.SetActive(!IsOn);
             if (IsOn)
             {
                 OnLightSetOn.Invoke();

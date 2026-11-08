@@ -13,6 +13,7 @@ public class RoomNode : MonoBehaviour
     
     private void Update()
     {
+        //ConnectedNode.GetComponentInParent<Room>();
         if (ConnectedNode != null)
         {
             GetComponent<MeshRenderer>().material.color = Color.red;

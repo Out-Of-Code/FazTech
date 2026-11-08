@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2377082008101540976}
   - component: {fileID: 7492740641985981348}
   - component: {fileID: 3403136718886986131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 0.58
+  m_Intensity: 5.8
   m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -81,7 +81,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 2883165956136154631}
   - component: {fileID: 8659263055605712918}
   - component: {fileID: 9095032258704753896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

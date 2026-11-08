@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Room
 {
+    public string InstanceID;
     public Transform RoomTransform;
     public RoomNode[] Nodes;
 }
@@ -37,6 +38,7 @@ public class RoomPlacement : MonoBehaviour
     void Start()
     {
         RoomSelected = new Room();
+        RegisterExistingRooms();
         CreateOfficeButtons();
     }
 
@@ -439,12 +441,40 @@ public class RoomPlacement : MonoBehaviour
 
     public void RegisterRoom(GameObject roomObject)
     {
+        Room existingRoom = AllRooms.Find(r => r.RoomTransform == roomObject.transform);
+
+        if (existingRoom != null)
+        {
+            if (string.IsNullOrEmpty(existingRoom.InstanceID))
+                existingRoom.InstanceID = System.Guid.NewGuid().ToString();
+
+            return;
+        }
         Room newRoom = new Room();
 
+        newRoom.InstanceID = System.Guid.NewGuid().ToString();
         newRoom.RoomTransform = roomObject.transform;
         newRoom.Nodes = roomObject.GetComponentsInChildren<RoomNode>();
 
         AllRooms.Add(newRoom);
+        Debug.Log($"Registered {roomObject.name} with ID: {newRoom.InstanceID}");
+    }
+    void RegisterExistingRooms()
+    {
+        RoomInstance[] existingRooms = FindObjectsByType<RoomInstance>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
+        Debug.Log($"Found {existingRooms.Length} RoomInstances.");
+
+        foreach (RoomInstance room in existingRooms)
+        {
+            Debug.Log($"Found room: {room.name}");
+            RegisterRoom(room.gameObject);
+        }
+        
+        Debug.Log($"Registered {AllRooms.Count} rooms.");
     }
     public GameObject SpawnRoom(RoomInfo roomData, Vector3 position)
     {

@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 1288408658280562166}
   - component: {fileID: 1137865002544626656}
   - component: {fileID: 8410983892901717029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 1668640772351772468}
   - component: {fileID: 7264916786879731357}
   - component: {fileID: 4781705978984565848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 5
+  m_Intensity: 50
   m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -547,7 +547,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 8100291132794783037}
   - component: {fileID: 9020637637759458049}
   - component: {fileID: 9151129626402174502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +750,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 5
+  m_Intensity: 50
   m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -787,7 +787,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 3956587311434628275}
   - component: {fileID: 4393767862418868827}
   - component: {fileID: 856276870516468717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,7 +1101,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 1.1
+  m_Intensity: 11
   m_Range: 10.8
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -1138,7 +1138,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 5953868938696289806}
   - component: {fileID: 3461090164584708511}
   - component: {fileID: 1367000575580887688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2019,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 5
+  m_Intensity: 50
   m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -2056,7 +2056,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2113,7 +2113,7 @@ GameObject:
   - component: {fileID: 8216890271781867135}
   - component: {fileID: 7957621780512375326}
   - component: {fileID: 3238944296194978170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Directional Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2146,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 0.8018868, g: 0.7059732, b: 0.5257654, a: 1}
-  m_Intensity: 5
+  m_Intensity: 50
   m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -2183,7 +2183,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -3077,7 +3077,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 31
+  m_VersionIndex: 37
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5073,7 +5073,7 @@ GameObject:
   - component: {fileID: 2465895632336558200}
   - component: {fileID: 262130831951239739}
   - component: {fileID: 3821260145179083099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5288,7 +5288,7 @@ GameObject:
   - component: {fileID: 307462850263466718}
   - component: {fileID: 7384415571920431647}
   - component: {fileID: 4094362448585834114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5583,7 +5583,7 @@ GameObject:
   - component: {fileID: 4454521386997587736}
   - component: {fileID: 4583157408646875405}
   - component: {fileID: 6693864706140934439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
